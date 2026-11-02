@@ -95,7 +95,7 @@ Exemplo com duas pessoas: **Alice** (envia o arquivo) e **Bob** (recebe).
 ## 4. Arquivos gerados
 
 | Arquivo | O que é |
-|---|---|---|
+|---|---|
 | `Nome.pu` | Chave pública RSA | 
 | `Nome.pr` | Chave privada RSA | 
 | `x_K.txt` | Chave AES em hexadecimal | 
