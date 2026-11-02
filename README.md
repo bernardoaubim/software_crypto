@@ -36,12 +36,12 @@ pip install cryptography
 
 ## 2. Como executar
 
-1. Coloque o `criptografia_simples.py` em uma pasta, por exemplo `C:\Tarefa3`.
+1. Coloque o `criptografia.py` em uma pasta, por exemplo `C:\Tarefa3`.
 2. Abra o Prompt de Comando **dentro dessa pasta**. 
 3. Rode:
 
 ```
-python criptografia_simples.py
+python criptografia.py
 ```
 
 O menu aparece:
