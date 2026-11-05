@@ -20,7 +20,7 @@ Para conferir, abra o **Prompt de Comando** (tecla Windows, digite `cmd`, Enter)
 python --version
 ```
 
-Deve aparecer algo como `Python 3.12.x`. Se der erro, tente `py --version`. Se esse funcionar, use `py` no lugar de `python` nos comandos abaixo.
+Deve aparecer algo como `Python 3.15.x`. Se der erro, tente `py --version`. Se esse funcionar, use `py` no lugar de `python` nos comandos abaixo.
 
 > O `tkinter` (usado para abrir a janela de escolha de arquivos) já vem com o Python do Windows. Não precisa instalar.
 
