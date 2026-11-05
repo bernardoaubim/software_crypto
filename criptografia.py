@@ -53,17 +53,17 @@ def aes_ctr(dados, chave, iv):
     """Cifra ou decifra com AES-CTR (a operação é a mesma nos dois sentidos)."""
     operacao = Cipher(algorithms.AES(chave), modes.CTR(iv)).encryptor()
     return operacao.update(dados) + operacao.finalize()
-           # Processa os dados      # encerra e devolve o que sobrou (não é para sobrar nada)
+           # Processa os dados (cifra)      # encerra e devolve o que sobrou (não é para sobrar nada)
 
 # ------------------------------------------------------------ opções do menu
 
 def gerar_chaves():
-    """1ª etapa: gera Nome.pu e Nome.pr (RSA 2048 bits)."""
+    """Gera Nome.pu e Nome.pr (RSA 2048 bits)."""
     nome = input("Seu nome: ").strip()
     privada = rsa.generate_private_key(public_exponent=65537, key_size=2048)
 
     pem_publica = privada.public_key().public_bytes(
-        serialization.Encoding.PEM, # Define a codificação do arquivo
+        serialization.Encoding.PEM, # Define a codificação do arquivo (base64)
         serialization.PublicFormat.SubjectPublicKeyInfo, # Define a estrutura interna da chave pública
     )
     pem_privada = privada.private_bytes(
@@ -77,7 +77,7 @@ def gerar_chaves():
 
 
 def cifrar_arquivo():
-    """2ª e 3ª etapas: cifra o arquivo com AES-CTR."""
+    """Cifra o arquivo com AES-CTR."""
     arquivo = escolher_arquivo("Escolha o arquivo a cifrar")
     bits = input("Tamanho da chave AES (128 ou 256): ").strip()
     if bits not in ("128", "256"):
@@ -95,7 +95,7 @@ def cifrar_arquivo():
 
 
 def proteger():
-    """4ª etapa: cifra a chave ou o IV com a chave pública do destinatário."""
+    """Cifra a chave ou o IV com a chave pública do destinatário."""
     arquivo = escolher_arquivo("Escolha o arquivo da chave ou do IV")
     caminho_pu = escolher_arquivo("Escolha a chave pública do destinatário", (("Chave pública", "*.pu"),))
 
