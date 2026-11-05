@@ -5,10 +5,10 @@ from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import padding, rsa
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 
-# O RSA-OAEP com SHA-256 é sempre usado com estes parâmetros
+# OAEP é o padding aplicado à mensagem antes do RSA. Ele adiciona aleatoriedades
 OAEP = padding.OAEP(
-    mgf=padding.MGF1(algorithm=hashes.SHA256()),
-    algorithm=hashes.SHA256(),
+    mgf=padding.MGF1(algorithm=hashes.SHA256()), # função que gera as máscaras (MGF1 com SHA-256)
+    algorithm=hashes.SHA256(), # hash usado na estrutura do bloco
     label=None,
 )
 
